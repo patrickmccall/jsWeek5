@@ -6,6 +6,28 @@ say for a student object
 
  
  */
+var student = {};
+student = {
+  firstName: "Glenn"
+  , lastName: "Danville"
+  , finalGrade: "B+"
+  , bioPic: "images/drawings/thumbs/artwork_14.jpg"
+  , checkGrade: function () {
+    //return alert("Yes, method of a student object")
+    if (this.finalGrade === "A") {
+      alert("Good job..." + this.firstName + " keep it up!")
+    }
+    else if (this.finalGrade === "B" || this.finalGrade === "C") {
+      alert("Doing OK..." + this.firstName + " strive for perfection!")
+    }
+    else {
+      alert("Well,..." + this.firstName + ", you can do better.")
+    }
+  }
+   , contactStudent: function () {
+     alert("calling...  " + this.firstName + "...")
+   }
+}
 
 
 console.log(student);
@@ -14,11 +36,8 @@ console.log(student);
 student.firstName = "Larry";
 
 console.log("the student name is now " + student.firstName);
-//changed to an object
 
-var imageListA = {
-  image1 :
-};
+var imageListA = [];
 imageListA[0] = "images/drawing/thumbs/artwork_1.jpg";
 imageListA[1] = "images/drawing/thumbs/artwork_2.jpg";
 imageListA[2] = "images/drawing/thumbs/artwork_3.jpg";
