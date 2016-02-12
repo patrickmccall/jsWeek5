@@ -8,16 +8,34 @@ say for a student object
  */
 var student = {};
 student = {
-    firstName: "Glenn"
+  firstName: "Glenn"
   , lastName: "Danville"
   , finalGrade: "B+"
   , bioPic: "images/drawings/thumbs/artwork_14.jpg"
+  , checkGrade: function () {
+    //return alert("Yes, method of a student object")
+    if (this.finalGrade === "A") {
+      alert("Good job..." + this.firstName + " keep it up!")
+    }
+    else if (this.finalGrade === "B" || this.finalGrade === "C") {
+      alert("Doing OK..." + this.firstName + " strive for perfection!")
+    }
+    else {
+      alert("Well,..." + this.firstName + ", you can do better.")
+    }
+  }
+   , contactStudent: function () {
+     alert("calling...  " + this.firstName + "...")
+   }
 }
+
 
 console.log(student);
 
 //change a property
-student.firstName = "Larry"
+student.firstName = "Larry";
+
+console.log("the student name is now " + student.firstName);
 
 var imageListA = [];
 imageListA[0] = "images/drawing/thumbs/artwork_1.jpg";
@@ -64,51 +82,46 @@ imageListC[8] = "images/watercolor/thumbs/artwork_9.jpg";
 imageListC[9] = "images/watercolor/thumbs/artwork_10.jpg";
 
 //create the buildThumbnail function
-function buildThumbnails()
-{
-	//hook onto the thumbs div
-	var thumbsDiv = document.getElementById("thumbs");
-	
-	//create an output variable
-	var output = "";
-	//first part: counter (we set up 0 to start counting the loop)
-	//second part: condition, (the loop will keep looping as long as the condition is true)
-	//third part: incrementor - adds one to the counter AFTER the code is executed in the brackets
-	output += '<div class="thumbs_block">  ';
-	for(var i=0; i < imageListA.length; i++)
-	{
-		//concatenation assignment operator..
-		output += '<img src="' + imageListA[i] + '" />';
-	}
-	output += '</div>';
-	output += '<div class="thumbs_block">  ';
-	for(var j=0; j < imageListB.length; j++)
-	{
-		//concatenation assignment operator..
-		output += '<img src="' + imageListB[j] + '" />';
-	}
-	output += '</div>';
-	output += '<div class="thumbs_block">  ';
-// 	
-	for(var k=0; k < imageListC.length; k++)
-	{
-		//concatenation assignment operator..
-		output += '<img src="' + imageListC[k] + '" />';
-	}
-	output += '</div>';
-	
-	thumbsDiv.innerHTML = output;
-	// thumbsDiv.innerHTML = 
-	// '<img src="' + imageList[0] + '" />' + 
-	// '<img src="' + imageList[1] + '" />' +
-	// '<img src="' + imageList[2] + '" />' +
-	// '<img src="' + imageList[3] + '" />' +	
-	// '<img src="' + imageList[4] + '" />'
-	// ;
+function buildThumbnails() {
+  //hook onto the thumbs div
+  var thumbsDiv = document.getElementById("thumbs");
+
+  //create an output variable
+  var output = "";
+  //first part: counter (we set up 0 to start counting the loop)
+  //second part: condition, (the loop will keep looping as long as the condition is true)
+  //third part: incrementor - adds one to the counter AFTER the code is executed in the brackets
+  output += '<div class="thumbs_block">  ';
+  for (var i = 0; i < imageListA.length; i++) {
+    //concatenation assignment operator..
+    output += '<img src="' + imageListA[i] + '" />';
+  }
+  output += '</div>';
+  output += '<div class="thumbs_block">  ';
+  for (var j = 0; j < imageListB.length; j++) {
+    //concatenation assignment operator..
+    output += '<img src="' + imageListB[j] + '" />';
+  }
+  output += '</div>';
+  output += '<div class="thumbs_block">  ';
+  // 	
+  for (var k = 0; k < imageListC.length; k++) {
+    //concatenation assignment operator..
+    output += '<img src="' + imageListC[k] + '" />';
+  }
+  output += '</div>';
+
+  thumbsDiv.innerHTML = output;
+  // thumbsDiv.innerHTML = 
+  // '<img src="' + imageList[0] + '" />' + 
+  // '<img src="' + imageList[1] + '" />' +
+  // '<img src="' + imageList[2] + '" />' +
+  // '<img src="' + imageList[3] + '" />' +	
+  // '<img src="' + imageList[4] + '" />'
+  // ;
 }
 
-window.onload = function()
-{
-	buildThumbnails();//use or "fire off" this function
-	//or invoke the function
+window.onload = function () {
+  buildThumbnails();//use or "fire off" this function
+  //or invoke the function
 };
