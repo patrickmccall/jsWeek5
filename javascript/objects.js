@@ -1,12 +1,23 @@
 //so far we have covered the following datatypes...
 //numbers, strings, arrays, booleans (true or false)
 /* 
+objects are great for complex data represented by one variable
+say for a student object
 
  
  */
-
+var student = {};
+student = {
+    firstName: "Glenn"
+  , lastName: "Danville"
+  , finalGrade: "B+"
+  , bioPic: "images/drawings/thumbs/artwork_14.jpg"
+}
 
 console.log(student);
+
+//change a property
+student.firstName = "Larry"
 
 var imageListA = [];
 imageListA[0] = "images/drawing/thumbs/artwork_1.jpg";
